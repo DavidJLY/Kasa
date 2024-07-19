@@ -1,7 +1,7 @@
 import React from "react";
-import logoHeader from "../assets/logoHeader.png";
-import logoFooter from "../assets/logoFooter.png";
-import "../style/Layout.scss";
+import logoHeader from "../../assets/logoHeader.png";
+import logoFooter from "../../assets/logoFooter.png";
+import "../../style/Layout.scss";
 import { Link } from "react-router-dom";
 
 export function Header() {

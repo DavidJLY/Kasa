@@ -1,31 +1,48 @@
 import React, { useState, useEffect } from "react";
-import { Header, Footer } from "../../Components/Layout";
+import { Header, Footer } from "../../Components/Layout/Layout.jsx";
 import "../../style/Home.scss";
+import { CardContainer } from "../../Components/CardContainer/CardContainer.jsx";
 
 export function Home() {
-  const [logements, setLogements] = useState([]);
-  useEffect(() => {
-    fetch(
-      "/Users/macdavid/Documents/OpenClassroom/P5/kasa/public/data/logements.json"
-    )
-      .then((response) => response.text())
-      .then((text) => {
-        console.log("Texte", text);
-        return JSON.parse(text);
-      })
-      .then((data) => setLogements(data))
-      .catch((error) => console.error("Erreur lors du fetch", error));
-  }, []);
   return (
     <div>
       <Header />
       <section className="promise">
-        <h1>Chez vous, partout et ailleurs</h1>
+        <h1 className="promise__h1">Chez vous, partout et ailleurs</h1>
       </section>
-      <div className="card">
-        <h1>Ceci est la div pour les cards</h1>
-      </div>
+      <Gallery />
       <Footer />
     </div>
   );
 }
+function Gallery() {
+  const [houses, setHouses] = useState([]);
+
+  useEffect(() => {
+    fetch("/logements.json")
+      .then((response) => response.json())
+      .then((data) => setHouses(data.items))
+      .catch((error) => console.error("Error fetching data:", error));
+  }, []);
+  return (
+    <div>
+      <CardContainer cards={houses} />
+    </div>
+  );
+}
+
+/*return (
+    <div className="gallery">
+      {houses.map((house) => (
+        <div key={house.id} className="gallery__cardItem">
+          <img
+            className="gallery__carditem--img"
+            src={house.cover}
+            alt={house.title}
+          />
+          <div className="gallery__cardItem--titleCard">{house.title}</div>
+        </div>
+      ))}
+    </div>
+  );
+}*/

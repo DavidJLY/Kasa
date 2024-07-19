@@ -1,0 +1,27 @@
+.kasa-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  box-sizing: border-box;
+  margin: auto;
+  img {
+    border-radius: 10px;
+    width: 340px;
+    height: 340px;
+    object-fit: cover;
+  }
+  .title-card {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    color: white;
+    bottom: 10px;
+    left: 10px;
+    max-width: 50%;
+    background: rgba(3, 2, 2, 0.3);
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
