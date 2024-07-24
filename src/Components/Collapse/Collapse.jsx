@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../../style/Collapse.scss";
 
 export function Collapse({ title, content }) {
   const [isVisible, setIsVisible] = useState(false);

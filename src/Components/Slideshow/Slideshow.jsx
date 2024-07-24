@@ -6,29 +6,27 @@ function Slideshow({ logement }) {
 
   // Next picture function
   const nextPicture = () => {
-    const totalPictures = logement[0].pictures.length;
+    const totalPictures = logement.pictures.length;
     setCurrentPictureIndex((currentPictureIndex + 1) % totalPictures);
   };
 
   // Previous picture function
   const previousPicture = () => {
-    const totalPictures = logement[0].pictures.length;
+    const totalPictures = logement.pictures.length;
     setCurrentPictureIndex(
       (currentPictureIndex - 1 + totalPictures) % totalPictures
     );
   };
 
   // Vérification pour s'assurer qu'il y a des images à afficher
-  if (
-    !(logement.length && logement[0].pictures && logement[0].pictures.length)
-  ) {
+  if (!logement.pictures || !logement.pictures.length) {
     return <div>No images available.</div>;
   }
   //Récupération du nombre d'images à afficher
-  const totalPictures = logement[0].pictures.length;
+  const totalPictures = logement.pictures.length;
 
   // Récupération de l'image courante à afficher
-  const currentPicture = logement[0].pictures[currentPictureIndex];
+  const currentPicture = logement.pictures[currentPictureIndex];
 
   return (
     <div className="slideShow-container">
@@ -39,12 +37,14 @@ function Slideshow({ logement }) {
       />
       {totalPictures > 1 && (
         <div className="navigation">
-          <button className="previousBtn" onClick={previousPicture}>
-            Previous
-          </button>
-          <button className="nextBtn" onClick={nextPicture}>
-            Next
-          </button>
+          <button
+            className="fa-solid fa-chevron-left prev"
+            onClick={previousPicture}
+          ></button>
+          <button
+            className="fa-solid fa-chevron-right next"
+            onClick={nextPicture}
+          ></button>
         </div>
       )}
       <div className="picture-count">

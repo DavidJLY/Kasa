@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Collapse } from "../Collapse/Collapse";
+import RatingStar from "../RatingStar/RatingStar";
+import DisplayTags from "../DisplayTag/DisplayTag";
 import "../../style/LogementDescription.scss";
 
 function LogementDescription({ logement }) {
@@ -8,22 +10,32 @@ function LogementDescription({ logement }) {
   return (
     <div className="logementDescription">
       <div className="titleAndHost">
-        <h2 className="title">{logement[0].title}</h2>
+        <div className="titleAndLocation">
+          <h2 className="title">{logement.title}</h2>
+          <p className="location">{logement.location}</p>
+        </div>
+        <div className="host">
+          <p>{logement.host.name}</p>
+          <img
+            className="hostPic"
+            src={logement.host.picture}
+            alt={logement.host.name}
+          ></img>
+        </div>
       </div>
-      <p className="location">{logement[0].location}</p>
+      <div className="tagsAndStars">
+        <DisplayTags tags={logement.tags} />
+        <RatingStar rating={logement.rating} />
+      </div>
       <div className="collapse">
-        <Collapse title="Description" content={logement[0].description} />
-        <Collapse title="Equipements" content={logement[0].equipments} />
+        <Collapse title="Description" content={logement.description} />
+        <Collapse
+          title="Equipements"
+          content={logement.equipments.join(", ")}
+        />
       </div>
     </div>
   );
 }
-/*<img
-            className="hostPic"
-            src={logement[0].host.picture}
-            alt={logement[0].host.name}
-          ></img>
-          <p>{logement[0].host.name}</p>
-          */
 
 export default LogementDescription;

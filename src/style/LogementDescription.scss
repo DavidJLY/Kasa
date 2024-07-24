@@ -2,44 +2,106 @@
   font-family: "Montserrat";
   font-style: normal;
   font-weight: 500;
-  font-size: 24px;
+}
+
+.logementDescription {
+  @include AboutText;
+  width: 90%;
+  margin: auto;
+  .titleAndHost {
+    display: flex;
+    justify-content: space-between;
+    .titleAndLocation {
+      display: flex;
+      flex-direction: column;
+      .title {
+        color: #ff6060;
+        font-size: 36px;
+        margin: 0;
+      }
+      .location {
+        margin: 0;
+      }
+    }
+    .host {
+      display: flex;
+      color: #ff6060;
+      gap: 15px;
+      p {
+        font-size: 18px;
+      }
+      .hostPic {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
+    }
+  }
+}
+
+.tagsAndStars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+    .tag {
+      background-color: #ff6060;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  }
+  .ratingStar {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    .fa-solid.fa-star {
+      color: #ff6060;
+    }
+    .fa-regular.fa-star {
+      color: #e3e3e3;
+    }
+  }
 }
 
 .collapse {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
-  margin: 30px auto;
+  margin: 0;
+  gap: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .collapse-item {
+    .collapseTitle {
+      width: 100%;
+      margin-left: 0;
+    }
+    .chevron {
+      cursor: pointer;
+      transition: transform 0.5s;
+    }
 
-  .chevron {
-    cursor: pointer;
-    transition: transform 0.5s;
-  }
+    .chevron.rotate {
+      transform: rotate(180deg);
+    }
 
-  .chevron.rotate {
-    transform: rotate(180deg);
-  }
+    p {
+      height: 0;
+      overflow: hidden;
+      transition: height 0.5s ease, padding 0.5s ease;
+      margin: 0 30px;
+      padding: 0 20px;
+      font-size: 1.1rem;
+    }
 
-  p {
-    height: 0;
-    overflow: hidden;
-    transition: height 0.5s ease, padding 0.5s ease;
-    margin: 0 30px;
-    padding: 0 20px;
-    font-size: 1.1rem;
-  }
-
-  .visible {
-    height: auto;
-    padding-bottom: 15px;
-    margin: 30px;
-  }
-}
-.titleAndHost {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  .hostPic {
-    border-radius: 50%;
+    .visible {
+      height: auto;
+      padding-bottom: 15px;
+      margin: 30px;
+    }
   }
 }

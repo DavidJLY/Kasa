@@ -7,7 +7,7 @@ import "../../style/Logement.scss";
 
 function Logement() {
   const { id } = useParams(); //Recupération de l'ID de l'url
-  const [logement, setLogement] = useState([]);
+  const [logement, setLogement] = useState(null);
 
   useEffect(() => {
     fetch("/logements.json")
@@ -20,16 +20,17 @@ function Logement() {
       .catch((error) => console.error("Error fetching data:", error));
   }, [id]);
 
-  /*if (!logement) {
+  if (!logement) {
     return <div>Loading...</div>; // Affiche un indicateur de chargement pendant la récupération des données
-  }*/
+  }
 
+  console.log(logement);
   return (
     <div>
       <Header />
       <div className="ficheLogement">
-        <Slideshow logement={[logement]} />
-        <LogementDescription logement={[logement]} />
+        <Slideshow logement={logement} />
+        <LogementDescription logement={logement} />
       </div>
       <Footer />
     </div>

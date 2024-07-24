@@ -8,12 +8,8 @@
 .collapse {
   width: 80%;
   margin: 30px auto;
-  display: flex;
-  flex-direction: column;
-
   .collapse-item {
-    @include AboutText();
-
+    @include AboutText;
     .collapseTitle {
       display: flex;
       align-items: center;
@@ -23,10 +19,9 @@
       margin: 30px;
 
       h2 {
-        display: flex;
         width: 100%;
         padding: 0 20px;
-        @include AboutText();
+        @include AboutText;
       }
 
       i {
