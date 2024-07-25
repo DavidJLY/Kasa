@@ -4,104 +4,108 @@
   font-weight: 500;
 }
 
-.logementDescription {
-  @include AboutText;
+.flatInformation {
   width: 90%;
   margin: auto;
-  .titleAndHost {
+  .firstSection {
     display: flex;
     justify-content: space-between;
     .titleAndLocation {
-      display: flex;
-      flex-direction: column;
       .title {
         color: #ff6060;
-        font-size: 36px;
-        margin: 0;
       }
-      .location {
-        margin: 0;
+      .tags {
+        display: flex;
+        align-items: center;
+        margin-top: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 10px;
+        .tag {
+          background-color: #ff6060;
+          color: white;
+          padding: 5px 10px;
+          border-radius: 10px;
+        }
       }
     }
-    .host {
+  }
+  .hostAndRating {
+    .ratingStar {
       display: flex;
-      color: #ff6060;
-      gap: 15px;
+      gap: 5px;
+      margin-top: 10px;
+      .fa-solid.fa-star {
+        color: #ff6060;
+      }
+      .fa-regular.fa-star {
+        color: #e3e3e3;
+      }
+    }
+  }
+  .host {
+    display: flex;
+    color: #ff6060;
+    gap: 30px;
+    width: 10px;
+    .hostPic {
+      border-radius: 50%;
+      width: 64px;
+      height: 64px;
+    }
+  }
+  .collapse {
+    width: 100%;
+    margin: auto;
+    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .collapse-item {
+      .collapseTitle {
+        width: 100%;
+        margin-left: 0;
+      }
+      .chevron {
+        cursor: pointer;
+        transition: transform 0.5s;
+      }
+
+      .chevron.rotate {
+        transform: rotate(180deg);
+      }
+
       p {
-        font-size: 18px;
+        height: 0;
+        overflow: hidden;
+        transition: height 0.5s ease, padding 0.5s ease;
+        margin: 0 30px;
+        padding: 0 20px;
+        font-size: 1.1rem;
       }
-      .hostPic {
-        border-radius: 50%;
-        width: 64px;
-        height: 64px;
+
+      .visible {
+        height: auto;
+        padding-bottom: 15px;
+        margin: 30px;
       }
     }
   }
 }
 
-.tagsAndStars {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 10px;
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-    .tag {
-      background-color: #ff6060;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 10px;
+@media (max-width: 768px) {
+  .flatInformation {
+    .firstSection {
+      display: block;
     }
-  }
-  .ratingStar {
-    display: flex;
-    gap: 5px;
-    margin-top: 10px;
-    .fa-solid.fa-star {
-      color: #ff6060;
+    .hostAndRating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
     }
-    .fa-regular.fa-star {
-      color: #e3e3e3;
-    }
-  }
-}
-
-.collapse {
-  width: 100%;
-  margin: 0;
-  gap: 50px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  .collapse-item {
-    .collapseTitle {
-      width: 100%;
-      margin-left: 0;
-    }
-    .chevron {
-      cursor: pointer;
-      transition: transform 0.5s;
-    }
-
-    .chevron.rotate {
-      transform: rotate(180deg);
-    }
-
-    p {
-      height: 0;
-      overflow: hidden;
-      transition: height 0.5s ease, padding 0.5s ease;
-      margin: 0 30px;
-      padding: 0 20px;
-      font-size: 1.1rem;
-    }
-
-    .visible {
-      height: auto;
-      padding-bottom: 15px;
-      margin: 30px;
+    .collapse {
+      display: block;
     }
   }
 }

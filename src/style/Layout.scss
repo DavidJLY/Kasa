@@ -12,17 +12,21 @@ header {
   align-items: flex-start;
   justify-content: space-between;
   margin: 20px 50px;
-  ul {
+  /*ul {
     display: flex;
     align-items: flex-end;
     text-align: right;
     gap: 57px;
     list-style: none;
     cursor: pointer;
-  }
-  a {
+  }*/
+  nav a {
     text-decoration: none;
     color: inherit;
+    margin: 30px;
+    &.active {
+      text-decoration: underline;
+    }
     &:hover {
       text-decoration-line: underline;
     }

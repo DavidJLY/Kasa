@@ -2,21 +2,15 @@ import React from "react";
 import logoHeader from "../../assets/logoHeader.png";
 import logoFooter from "../../assets/logoFooter.png";
 import "../../style/Layout.scss";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function Header() {
   return (
     <header>
       <img src={logoHeader} alt="logo"></img>
       <nav>
-        <ul>
-          <li>
-            <Link to="/">Accueil</Link>
-          </li>
-          <li>
-            <Link to="/about">A Propos</Link>
-          </li>
-        </ul>
+        <NavLink to="/">Accueil</NavLink>
+        <NavLink to="/about">A propos</NavLink>
       </nav>
     </header>
   );
@@ -30,3 +24,13 @@ export function Footer() {
     </footer>
   );
 }
+/*<ul>
+          <li>
+            <Link className="homeLink" to="/">
+              Accueil
+            </Link>
+          </li>
+          <li className="aboutLink">
+            <Link to="/about">A Propos</Link>
+          </li>
+        </ul>*/
