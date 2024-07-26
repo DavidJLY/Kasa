@@ -1,6 +1,7 @@
 import Card from "../Card/Card";
 import "../../style/CardContainer.scss";
 
+// Displaying the gallery using the Card component for each accommodation
 export function CardContainer({ cards }) {
   return (
     <div className="card-container">

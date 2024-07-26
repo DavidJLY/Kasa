@@ -1,5 +1,6 @@
 import React from "react";
 
+// Displaying tags from logements.json
 function DisplayTags({ tags }) {
   return (
     <div className="tags">

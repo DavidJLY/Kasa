@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function Collapse({ title, content }) {
+function Collapse({ title, content }) {
   const [isVisible, setIsVisible] = useState(false);
   const handleClick = () => {
     setIsVisible(!isVisible);
@@ -20,3 +20,5 @@ export function Collapse({ title, content }) {
     </div>
   );
 }
+
+export default Collapse;

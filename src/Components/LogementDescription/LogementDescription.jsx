@@ -1,9 +1,10 @@
 import React from "react";
-import { Collapse } from "../Collapse/Collapse";
+import Collapse from "../Collapse/Collapse";
 import RatingStar from "../RatingStar/RatingStar";
 import DisplayTags from "../DisplayTag/DisplayTag";
 import "../../style/LogementDescription.scss";
 
+// Displaying the accommodation information and using the DisplayTag, RatingStar, and Collapse components
 function LogementDescription({ logement }) {
   console.log({ logement });
 

@@ -4,6 +4,7 @@ import logoFooter from "../../assets/logoFooter.png";
 import "../../style/Layout.scss";
 import { NavLink } from "react-router-dom";
 
+//Affichage du Header
 export function Header() {
   return (
     <header>
@@ -15,7 +16,7 @@ export function Header() {
     </header>
   );
 }
-
+//Affichage du Footer
 export function Footer() {
   return (
     <footer>
@@ -24,13 +25,3 @@ export function Footer() {
     </footer>
   );
 }
-/*<ul>
-          <li>
-            <Link className="homeLink" to="/">
-              Accueil
-            </Link>
-          </li>
-          <li className="aboutLink">
-            <Link to="/about">A Propos</Link>
-          </li>
-        </ul>*/

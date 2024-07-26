@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../../style/Slideshow.scss";
 
+// Displaying the image for the accommodation page
 function Slideshow({ logement }) {
   const [currentPictureIndex, setCurrentPictureIndex] = useState(0);
 
@@ -18,14 +19,15 @@ function Slideshow({ logement }) {
     );
   };
 
-  // Vérification pour s'assurer qu'il y a des images à afficher
+  // Checking to ensure there are images to display
   if (!logement.pictures || !logement.pictures.length) {
     return <div>No images available.</div>;
   }
-  //Récupération du nombre d'images à afficher
+  // Retrieving the number of images to display
+
   const totalPictures = logement.pictures.length;
 
-  // Récupération de l'image courante à afficher
+  // Retrieving the current image to display
   const currentPicture = logement.pictures[currentPictureIndex];
 
   return (

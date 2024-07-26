@@ -1,7 +1,8 @@
 import React from "react";
-import { Collapse } from "../Collapse/Collapse";
+import Collapse from "../Collapse/Collapse";
 import "../../style/AboutList.scss";
 
+// Displaying the content of the About page using the Collapse component
 const items = [
   {
     title: "Fiabilité",
