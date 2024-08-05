@@ -24,7 +24,6 @@ function Slideshow({ logement }) {
     return <div>No images available.</div>;
   }
   // Retrieving the number of images to display
-
   const totalPictures = logement.pictures.length;
 
   // Retrieving the current image to display
@@ -49,9 +48,11 @@ function Slideshow({ logement }) {
           ></button>
         </div>
       )}
-      <div className="picture-count">
-        {currentPictureIndex + 1} / {totalPictures}
-      </div>
+      {totalPictures > 1 && (
+        <div className="picture-count">
+          {currentPictureIndex + 1} / {totalPictures}
+        </div>
+      )}
     </div>
   );
 }

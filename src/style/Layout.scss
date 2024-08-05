@@ -11,24 +11,36 @@ header {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 20px 50px;
-  /*ul {
+  width: 85%;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  nav {
     display: flex;
-    align-items: flex-end;
-    text-align: right;
-    gap: 57px;
-    list-style: none;
-    cursor: pointer;
-  }*/
+    justify-content: space-between;
+    align-self: center;
+    margin-right: 15px;
+  }
   nav a {
     text-decoration: none;
     color: inherit;
-    margin: 30px;
+    margin-left: 20px;
     &.active {
       text-decoration: underline;
     }
     &:hover {
       text-decoration-line: underline;
+    }
+  }
+  @media (max-width: 768px) {
+    .logoHeader {
+      width: 70%;
+    }
+  }
+  @media (max-width: 560px) {
+    nav {
+      margin: 0;
+      font-size: 15px;
     }
   }
 }
@@ -44,6 +56,10 @@ footer {
   color: #ffffff;
   background-color: black;
   height: 200px;
+  /*position: fixed;*/
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
 }
 .logo_footer {
   height: 20%;

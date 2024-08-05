@@ -7,6 +7,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 8%;
+  gap: 139px;
+  @media (max-width: 768px) {
+    gap: 113px;
+    margin-top: 15%;
+  }
   .mainError__numberError {
     font-weight: 700;
     font-size: 10rem;
@@ -23,3 +29,11 @@
     margin-bottom: 50px;
   }
 }
+
+/*
+.footerError {
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+*/

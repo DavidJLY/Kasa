@@ -10,14 +10,13 @@
 
 .slideShow-container {
   position: relative;
-  width: 90%;
+  width: 85%;
   margin: auto;
   .pictures {
     width: 100%;
     border-radius: 25px;
     object-fit: cover;
     max-height: 700px;
-    height: 700px;
   }
 }
 
@@ -38,7 +37,7 @@
 
 .picture-count {
   position: absolute;
-  bottom: 10px;
+  bottom: 50px;
   right: 50%;
   color: white;
   display: flex;

@@ -8,7 +8,9 @@ import { NavLink } from "react-router-dom";
 export function Header() {
   return (
     <header>
-      <img src={logoHeader} alt="logo"></img>
+      <NavLink to="/">
+        <img className="logoHeader" src={logoHeader} alt="logo"></img>
+      </NavLink>
       <nav>
         <NavLink to="/">Accueil</NavLink>
         <NavLink to="/about">A propos</NavLink>

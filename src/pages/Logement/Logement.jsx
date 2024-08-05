@@ -11,6 +11,7 @@ function Logement() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  //Logements data fetch
   useEffect(() => {
     fetch("/logements.json")
       .then((response) => response.json())
@@ -30,16 +31,17 @@ function Logement() {
       });
   }, [id]);
 
+  // Display a loading indicator to avoid rendering issues
   if (loading) {
     return <div>Loading...</div>;
   }
-
+  // Redirect to the error page in case of data retrieval error
   if (error) {
     return <Navigate to="/errorpage" />;
   }
 
   return (
-    <div>
+    <div className="logementPage">
       <Header />
       <div className="ficheLogement">
         <Slideshow logement={logement} />
