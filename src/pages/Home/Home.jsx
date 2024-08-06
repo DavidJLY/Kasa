@@ -30,19 +30,3 @@ function Gallery() {
     </div>
   );
 }
-
-/*return (
-    <div className="gallery">
-      {houses.map((house) => (
-        <div key={house.id} className="gallery__cardItem">
-          <img
-            className="gallery__carditem--img"
-            src={house.cover}
-            alt={house.title}
-          />
-          <div className="gallery__cardItem--titleCard">{house.title}</div>
-        </div>
-      ))}
-    </div>
-  );
-}*/

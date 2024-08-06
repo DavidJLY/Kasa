@@ -5,7 +5,6 @@ import "./style/index.css";
 import { Home } from "./pages/Home/Home";
 import { About } from "./pages/About/About";
 import { ErrorPage } from "./pages/ErrorPage/ErrorPage";
-import { HouseCard } from "./pages/HouseCard/HouseCard";
 import Logement from "./pages/Logement/Logement";
 import ErrorBoundary from "./Components/ErrorBoundary/ErrorBoundary";
 
@@ -21,10 +20,6 @@ const router = createBrowserRouter([
   {
     path: "/errorpage",
     element: <ErrorPage />,
-  },
-  {
-    path: "/housecard",
-    element: <HouseCard />,
   },
   {
     path: "*",
