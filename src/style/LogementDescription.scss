@@ -46,10 +46,20 @@
     @media (max-width: 768px) {
       display: flex;
       flex-direction: row-reverse;
-      justify-content: space-between;
       align-items: center;
-      width: 60%;
+      justify-content: space-between;
+      width: 100%;
       margin-top: 20px;
+    }
+    .host {
+      display: flex;
+      color: #ff6060;
+      gap: 30px;
+      .hostPic {
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+      }
     }
     .ratingStar {
       display: flex;
@@ -61,17 +71,6 @@
       .fa-regular.fa-star {
         color: #e3e3e3;
       }
-    }
-  }
-  .host {
-    display: flex;
-    color: #ff6060;
-    gap: 30px;
-    width: 100%;
-    .hostPic {
-      border-radius: 50%;
-      width: 64px;
-      height: 64px;
     }
   }
   .collapse {
@@ -118,44 +117,3 @@
     }
   }
 }
-
-/*
-@media (max-width: 768px) {
-  .flatInformation {
-    box-sizing: content-box;
-    .firstSection {
-      display: block;
-      justify-content: flex-start;
-    }
-    .hostAndRating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-      width: 70%;
-    }
-    .collapse {
-      display: block;
-    }
-  }
-}
-@media (max-width: 500px) {
-  .flatInformation {
-    box-sizing: content-box;
-    .firstSection {
-      display: block;
-      justify-content: flex-start;
-    }
-    .hostAndRating {
-      display: flex;
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-      width: 60%;
-    }
-    .collapse {
-      display: block;
-    }
-  }
-}
-*/
